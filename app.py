@@ -14,6 +14,10 @@ def tu_ilmenau():
 def about():
     return redirect("https://github.com/clerie/walduni", code=302)
 
+@app.route('/turm')
+def turm():
+    return redirect("https://turm.rz.tu-ilmenau.de/eE/aktuell/lstr_browser.php", code=302)
+
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
     port = int(os.environ.get('PORT', 5000))
