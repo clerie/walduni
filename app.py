@@ -14,11 +14,15 @@ def tu_ilmenau():
 def about():
     return redirect("https://github.com/clerie/walduni", code=302)
 
-@app.route('/modultafeln/<course>')
-@app.route('/modultafel/<course>')
-@app.route('/modulplan/<course>')
-@app.route('/module/<course>')
-def modultafeln(course):
+@app.route('/modultafeln/<course>/')
+@app.route('/modultafel/<course>/')
+@app.route('/modulplan/<course>/')
+@app.route('/module/<course>/')
+@app.route('/modultafeln/')
+@app.route('/modultafel/')
+@app.route('/modulplan/')
+@app.route('/module/')
+def modultafeln(course=""):
     
     courseToPath = {
         "amw": "AngewandteMedienundKommunikationswissenschaft/Bachelor/2014",
