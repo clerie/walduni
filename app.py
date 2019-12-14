@@ -14,6 +14,10 @@ def tu_ilmenau():
 def about():
     return redirect("https://github.com/clerie/walduni", code=302)
 
+@app.route('/turm/')
+def turm():
+    return redirect("https://turm.rz.tu-ilmenau.de/eE/aktuell/lstr_browser.php", code=302)
+
 @app.route('/modultafeln/<course>/')
 @app.route('/modultafel/<course>/')
 @app.route('/modulplan/<course>/')
@@ -23,7 +27,6 @@ def about():
 @app.route('/modulplan/')
 @app.route('/module/')
 def modultafeln(course=""):
-    
     courseToPath = {
         "amw": "AngewandteMedienundKommunikationswissenschaft/Bachelor/2014",
         "amk": "AngewandteMedienundKommunikationswissenschaft/Bachelor/2014",
