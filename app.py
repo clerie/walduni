@@ -14,10 +14,10 @@ def tu_ilmenau():
 def about():
     return redirect("https://github.com/clerie/walduni", code=302)
 
-@app.route('/modultafeln/<str:course>')
-@app.route('/modultafel/<str:course>')
-@app.route('/modulplan/<str:course>')
-@app.route('/module/<str:course>')
+@app.route('/modultafeln/<course>')
+@app.route('/modultafel/<course>')
+@app.route('/modulplan/<course>')
+@app.route('/module/<course>')
 def modultafeln(course):
     
     courseToPath = {
