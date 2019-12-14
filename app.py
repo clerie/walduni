@@ -51,6 +51,11 @@ def modultafeln(course=""):
     
     return redirect("https://www.tu-ilmenau.de/modultafeln/" + courseToPath.get(course, ""), code=302)
 
+@app.route('/mail/')
+@app.route('/webmail/')
+def mail():
+    return redirect("https://webmail.tu-ilmenau.de/", code=302)
+
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
     port = int(os.environ.get('PORT', 5000))
