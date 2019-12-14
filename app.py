@@ -14,7 +14,7 @@ def tu_ilmenau():
 def about():
     return redirect("https://github.com/clerie/walduni", code=302)
 
-@app.route('/turm')
+@app.route('/turm/')
 def turm():
     return redirect("https://turm.rz.tu-ilmenau.de/eE/aktuell/lstr_browser.php", code=302)
 
