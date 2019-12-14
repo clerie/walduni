@@ -56,6 +56,11 @@ def modultafeln(course=""):
 def mail():
     return redirect("https://webmail.tu-ilmenau.de/", code=302)
 
+@app.route('/unirz/')
+@app.route('/rz/')
+def unirz():
+    return redirect("https://www.tu-ilmenau.de/unirz/", code=302)
+
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
     port = int(os.environ.get('PORT', 5000))
