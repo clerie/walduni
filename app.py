@@ -65,6 +65,79 @@ def unirz():
 def vlv():
     return redirect("https://www.tu-ilmenau.de/vlv/index.php?id=330", code=302)
 
+########################################################################################################################
+# FeM
+########################################################################################################################
+
+# FeM
+@app-route('/fem/')
+def fem():
+    return redirect("https://www.fem.tu-ilmenau.de/aktuelles/", code=302)
+
+########################################################################################################################
+# ILSC
+########################################################################################################################
+
+# ILSC
+@app.route('/ilsc/')
+def ilsc():
+    return redirect("https://www.tu-ilmenau.de/fsr-mn/", code=302)
+
+# BC
+@app.route('/bc/')
+def bc_club():
+    return redirect("https://www.bc-club.de/", code=302)
+
+# BD
+@app.route('/bd/')
+def bd_club():
+    return redirect("http://www.bd-club.de/", code=302)
+
+# BH
+@app.route('/bh/')
+def bh_club():
+    return redirect("http://bh-club.de/", code=302)
+
+# BI
+@app.route('/bi/')
+def bi_club():
+    return redirect("https://www.bi-club.de/", code=302)
+
+########################################################################################################################
+# Stura
+########################################################################################################################
+
+# Stura
+@app.route('/stura/')
+def stura():
+    return redirect("https://stura.tu-ilmenau.de/", code=302)
+
+# FSR EI
+@app.route('/ei/')
+@app.route('/fsr-ei/')
+def fsr_ei():
+    return redirect("https://www.tu-ilmenau.de/fachschaftsrat-ei/", code=302)
+
+# FSR IA
+@app.route('/ia/')
+@app.route('/fsr-ia/')
+def fsr_ia():
+    return redirect("https://www.tu-ilmenau.de/fsr-ia/", code=302)
+
+# FSR MB
+@app.route('/mb/')
+@app.route('/fsr-mb/')
+def fsr_mb():
+    return redirect("https://www.tu-ilmenau.de/fsr-mb/", code=302)
+
+# FSR MN
+@app.route('/mn')
+@app.route('/fsr-mn/')
+def fsr_mn():
+    return redirect("https://www.tu-ilmenau.de/fsr-mn/", code=302)
+
+
+
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
     port = int(os.environ.get('PORT', 5000))
