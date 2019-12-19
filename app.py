@@ -3,6 +3,8 @@
 
 import os
 from flask import Flask,redirect
+from bs4 import BeautifulSoup
+import requests
 
 app = Flask(__name__)
 
@@ -102,6 +104,19 @@ def bh_club():
 @app.route('/bi/')
 def bi_club():
     return redirect("https://www.bi-club.de/", code=302)
+
+# Montagsküche
+@app.route('/montag/')
+def montagskueche():
+    try:
+        posts = requests.get("https://www.bi-club.de/tags/montagskueche")
+        soup = BeautifulSoup(posts.text, 'html.parser')
+        link = soup.find(id='main').article.header.h2.a.get('href')
+        return redirect("https://www.bi-club.de" + link, code=302)
+    except:
+        return redirect("https://www.bi-club.de/tags/montagskueche", code=302)
+
+
 
 ########################################################################################################################
 # Stura
