@@ -70,7 +70,7 @@ def vlv():
 ########################################################################################################################
 
 # FeM
-@app-route('/fem/')
+@app.route('/fem/')
 def fem():
     return redirect("https://www.fem.tu-ilmenau.de/aktuelles/", code=302)
 
