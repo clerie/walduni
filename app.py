@@ -56,6 +56,11 @@ def modultafeln(course=""):
 def mail():
     return redirect("https://webmail.tu-ilmenau.de/", code=302)
 
+@app.route('/unirz/')
+@app.route('/rz/')
+def unirz():
+    return redirect("https://www.tu-ilmenau.de/unirz/", code=302)
+
 @app.route('/vlv/')
 def vlv():
     return redirect("https://www.tu-ilmenau.de/vlv/index.php?id=330", code=302)
