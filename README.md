@@ -1,3 +1,5 @@
+![Deploy](https://github.com/clerie/walduni/workflows/Deploy/badge.svg?branch=master)
+
 # Walduni
 Unoffical link shortner for TU Ilmenau
 
