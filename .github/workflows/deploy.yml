@@ -3,9 +3,6 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
 
 jobs:
   deploy:
@@ -14,4 +11,6 @@ jobs:
 
     steps:
     - name: http request
-      run: curl https://deploy.walduni.de
+      env:
+        secret: ${{ secrets.DeploySecret }}
+      run: curl "https://deploy.walduni.de?secret=${secret}"
