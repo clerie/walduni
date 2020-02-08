@@ -63,6 +63,11 @@ def mail():
 def unirz():
     return redirect("https://www.tu-ilmenau.de/unirz/", code=302)
 
+@app.route('/unibib/')
+@app.route('/bib/')
+def ub():
+    return redirect("https://www.tu-ilmenau.de/ub/", code=302)
+
 @app.route('/vlv/')
 def vlv():
     return redirect("https://www.tu-ilmenau.de/vlv/index.php?id=330", code=302)
