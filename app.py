@@ -13,7 +13,7 @@ app = Flask(__name__)
 def tu_ilmenau():
     return redirect("https://www.tu-ilmenau.de/", code=302)
 
-@app.route('/about')
+@app.route('/about/')
 def about():
     return redirect("https://github.com/clerie/walduni", code=302)
 
@@ -177,7 +177,7 @@ def fsr_mb():
     return redirect("https://www.tu-ilmenau.de/fsr-mb/", code=302)
 
 # FSR MN
-@app.route('/mn')
+@app.route('/mn/')
 @app.route('/fsr-mn/')
 def fsr_mn():
     return redirect("https://www.tu-ilmenau.de/fsr-mn/", code=302)
