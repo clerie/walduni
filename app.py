@@ -182,7 +182,79 @@ def fsr_mb():
 def fsr_mn():
     return redirect("https://www.tu-ilmenau.de/fsr-mn/", code=302)
 
+########################################################################################################################
+# StuWe
+########################################################################################################################
 
+@app.route('/mensa/')
+def mensa():
+    return redirect("https://spi.tu-ilmenau.de/mensa", code=302)
+
+@app.route('/block/a/')
+def block_a():
+    return redirect("https://www.stw-thueringen.de/deutsch/wohnen/wohnanlagen/ilmenau/max-planck-ring-7haus-a.html", code=302)
+
+@app.route('/block/b/')
+def block_b():
+    return redirect("https://www.stw-thueringen.de/deutsch/wohnen/wohnanlagen/ilmenau/max-planck-ring-9-haus-b.html", code=302)
+
+@app.route('/block/c/')
+def block_c():
+    return redirect("https://www.stw-thueringen.de/deutsch/wohnen/wohnanlagen/ilmenau/max-planck-ring-16-haus-c.html", code=302)
+
+@app.route('/block/d/')
+def block_d():
+    return redirect("https://www.stw-thueringen.de/deutsch/wohnen/wohnanlagen/ilmenau/max-planck-ring-18-haus-d.html", code=302)
+
+@app.route('/block/e/')
+def block_e():
+    return redirect("https://www.stw-thueringen.de/deutsch/wohnen/wohnanlagen/ilmenau/max-planck-ring-10-haus-e.html", code=302)
+
+@app.route('/block/h/')
+def block_h():
+    return redirect("https://www.stw-thueringen.de/deutsch/wohnen/wohnanlagen/ilmenau/max-planck-ring-2-haus-h.html", code=302)
+
+@app.route('/block/i/')
+def block_i():
+    return redirect("https://www.stw-thueringen.de/deutsch/wohnen/wohnanlagen/ilmenau/max-planck-ring-4-haus-i.html", code=302)
+
+@app.route('/block/k/')
+def block_k():
+    return redirect("https://www.stw-thueringen.de/deutsch/wohnen/wohnanlagen/ilmenau/am-helmholtzring-2-4-haus-k.html", code=302)
+
+@app.route('/block/l/')
+def block_l():
+    return redirect("https://www.stw-thueringen.de/deutsch/wohnen/wohnanlagen/ilmenau/max-planck-ring-6-8-haus-l.html", code=302)
+
+@app.route('/block/n/')
+def block_n():
+    return redirect("https://www.stw-thueringen.de/deutsch/wohnen/wohnanlagen/ilmenau/am-helmholtzring-3-haus-n.html", code=302)
+
+@app.route('/block/p/')
+def block_p():
+    return redirect("https://www.stw-thueringen.de/deutsch/wohnen/wohnanlagen/ilmenau/ehrenbergstrasse-37-haus-p.html", code=302)
+
+@app.route('/block/q/')
+def block_q():
+    return redirect("https://www.stw-thueringen.de/deutsch/wohnen/wohnanlagen/ilmenau/am-ehrenberg-6-haus-q.html", code=302)
+
+@app.route('/block/z/')
+def block_z():
+    return redirect("https://www.stw-thueringen.de/deutsch/wohnen/wohnanlagen/ilmenau/goetheallee-11-haus-zapf.html", code=302)
+
+@app.route('/block/cjd/')
+def block_cjd():
+    return ""
+
+@app.route('/block/pp/')
+@app.route('/block/prophis/')
+def block_pp():
+    return ""
+
+
+########################################################################################################################
+# Base
+########################################################################################################################
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
