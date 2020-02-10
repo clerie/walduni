@@ -5,6 +5,7 @@ import os
 from flask import Flask,redirect
 from bs4 import BeautifulSoup
 import requests
+from datetime import date
 
 app = Flask(__name__)
 
@@ -50,7 +51,7 @@ def modultafeln(course=""):
         "wi": "Wirtschaftsinformatik/Bachelor/2015/",
         "wiw": "Wirtschaftsingenieurwesen/Bachelor/2015/?vertiefung=MB"
     }
-    
+
     return redirect("https://www.tu-ilmenau.de/modultafeln/" + courseToPath.get(course, ""), code=302)
 
 @app.route('/mail/')
@@ -113,15 +114,40 @@ def bi_club():
 # Montagsküche
 @app.route('/montag/')
 def montagskueche():
+    # Get the startpage of bi club
     try:
-        posts = requests.get("https://www.bi-club.de/tags/montagskueche")
-        soup = BeautifulSoup(posts.text, 'html.parser')
-        link = soup.find(id='main').article.header.h2.a.get('href')
-        return redirect("https://www.bi-club.de" + link, code=302)
+        current_event = requests.get("https://www.bi-club.de/")
+        current_soup = BeautifulSoup(current_event.text, 'html.parser')
+        # Get an array of all events
+        events = current_soup.find(id='main').div.div.div.div.div.div.div.div.find_all('div', recursive=False)
     except:
         return redirect("https://www.bi-club.de/tags/montagskueche", code=302)
 
+    # Pseudo event
+    next_montagskueche = date.max
+    next_montagskueche_url = ""
 
+    for event in events:
+        # Get interesting information
+        content = event.div.div.div.div.find_all('div', recursive=False)[1]
+        # Get title
+        title = content.h2.a.text
+        # Get date
+        date_string = content.div.div.span.text.split(' - ')[1].split('.')
+        date_object = date(int(date_string[2]), int(date_string[1]), int(date_string[0]))
+        # Get url
+        url = content.h2.a.get('href')
+
+        # Select the event
+        if "Montagsküche" in title and date_object >= date.today() and date_object < next_montagskueche:
+            next_montagskueche = date_object
+            next_montagskueche_url = url
+
+    # Answer
+    if next_montagskueche_url != "":
+        return redirect(next_montagskueche_url, code=302)
+    else:
+        return redirect("https://www.bi-club.de/tags/montagskueche", code=302)
 
 ########################################################################################################################
 # Stura
