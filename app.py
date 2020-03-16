@@ -251,6 +251,22 @@ def block_cjd():
 def block_pp():
     return ""
 
+########################################################################################################################
+# Temporary
+########################################################################################################################
+
+# Corona Telegram Channel
+@app.route('/corona/')
+@app.route('/covid19/')
+@app.route('/covid-19/')
+@app.route('/corona/news')
+@app.route('/covid19/news')
+@app.route('/covid-19/news')
+@app.route('/corona/telegram')
+@app.route('/covid19/telegram')
+@app.route('/covid-19/telegram')
+def corona():
+    return redirect("https://t.me/coronatui", code=302)
 
 ########################################################################################################################
 # Base
