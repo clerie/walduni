@@ -259,6 +259,12 @@ def block_pp():
 @app.route('/corona/')
 @app.route('/covid19/')
 @app.route('/covid-19/')
+@app.route('/corona/news')
+@app.route('/covid19/news')
+@app.route('/covid-19/news')
+@app.route('/corona/telegram')
+@app.route('/covid19/telegram')
+@app.route('/covid-19/telegram')
 def corona():
     return redirect("https://t.me/coronatui", code=302)
 
