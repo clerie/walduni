@@ -255,6 +255,10 @@ def block_cjd():
 def block_pp():
     return ""
 
+@app.route('/bahn/')
+def bahn():
+    return redirect("https://marudor.de/Ilmenau", code=302)
+
 
 ########################################################################################################################
 # Base
