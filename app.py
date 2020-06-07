@@ -15,7 +15,7 @@ def tu_ilmenau():
 
 @app.route('/about/')
 def about():
-    return redirect("https://github.com/clerie/walduni", code=302)
+    return redirect("https://git.clerie.de/clerie/walduni", code=302)
 
 @app.route('/turm/')
 def turm():
