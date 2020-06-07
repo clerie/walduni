@@ -65,6 +65,8 @@ def mail():
 
 @app.route('/unirz/')
 @app.route('/rz/')
+@app.route('/1111/')
+@app.route('/elfelf/')
 def unirz():
     return redirect("https://www.tu-ilmenau.de/unirz/", code=302)
 
