@@ -21,6 +21,10 @@ def about():
 def turm():
     return redirect("https://turm.rz.tu-ilmenau.de/eE/aktuell/lstr_browser.php", code=302)
 
+ @app.route('/moodle/')
+ def moodle():
+     return redirect("https://moodle2.tu-ilmenau.de/", code=302)
+
 @app.route('/modultafeln/<course>/')
 @app.route('/modultafel/<course>/')
 @app.route('/modulplan/<course>/')
