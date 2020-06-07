@@ -256,6 +256,7 @@ def block_pp():
     return ""
 
 @app.route('/bahn/')
+@app.route('/fahrplan/')
 def bahn():
     return redirect("https://marudor.de/Ilmenau", code=302)
 
